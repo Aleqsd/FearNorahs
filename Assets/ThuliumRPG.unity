@@ -205,13 +205,13 @@ GameObject:
   - component: {fileID: 72340351}
   - component: {fileID: 72340353}
   - component: {fileID: 72340352}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72340351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -349,7 +349,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 1.2, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 25.939001, z: 0}
 --- !u!114 &72718245
 MonoBehaviour:
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 714463324}
   - component: {fileID: 714463326}
   - component: {fileID: 714463325}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,9 +1234,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 16
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines: []
-  dialoguePanel: {fileID: 0}
+  dialoguePanel: {fileID: 72340350}
   npcName: 
 --- !u!4 &781442416
 Transform:
@@ -1446,7 +1446,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &807441775
 MonoBehaviour:
@@ -1540,6 +1540,18 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100010, guid: 28a326458c3d25c4b9d5b2f014788401, type: 3}
   m_PrefabInternal: {fileID: 1889084417}
+--- !u!65 &854148055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 854148053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.085851, y: 4.728946, z: 0.5699277}
+  m_Center: {x: -1.1025438, y: 10.986751, z: 0.09515668}
 --- !u!114 &854148058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,6 +1564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAgent: {fileID: 0}
+  dialogue:
+  - This is a cave!
 --- !u!1001 &906588822
 Prefab:
   m_ObjectHideFlags: 0
@@ -1707,7 +1721,7 @@ Transform:
   - {fileID: 1141696845}
   - {fileID: 907523063}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &963659191 stripped
 Transform:
@@ -1774,7 +1788,7 @@ GameObject:
   - component: {fileID: 1045788081}
   - component: {fileID: 1045788083}
   - component: {fileID: 1045788082}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,8 +1810,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.12, y: 0}
+  m_SizeDelta: {x: 85, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045788082
 MonoBehaviour:
@@ -1822,9 +1836,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 16
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2027,7 +2041,7 @@ GameObject:
   - component: {fileID: 1237028187}
   - component: {fileID: 1237028186}
   - component: {fileID: 1237028185}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,12 +2192,28 @@ Transform:
   - {fileID: 48986326}
   - {fileID: 1065072637}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1269734827 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 2ff26ffb0577d944f9035a5518c06709, type: 3}
   m_PrefabInternal: {fileID: 2057032551}
+--- !u!1 &1355793955 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: 28a326458c3d25c4b9d5b2f014788401, type: 3}
+  m_PrefabInternal: {fileID: 1889084417}
+--- !u!65 &1355793957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355793955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0991457, y: 13.841092, z: 1.0991457}
+  m_Center: {x: -0.5495423, y: 6.9205456, z: -0.549569}
 --- !u!1001 &1467200895
 Prefab:
   m_ObjectHideFlags: 0
@@ -2348,8 +2378,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 72340351}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1959327742}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2561,7 +2591,7 @@ GameObject:
   - component: {fileID: 1692221240}
   - component: {fileID: 1692221242}
   - component: {fileID: 1692221241}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2607,11 +2637,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 26
+    m_MinSize: 10
+    m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2698,7 +2728,7 @@ Transform:
   m_Children:
   - {fileID: 403099534}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1750353884 stripped
 Transform:
@@ -2764,7 +2794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1795234567 stripped
 Transform:
@@ -2780,7 +2810,7 @@ GameObject:
   - component: {fileID: 1850827885}
   - component: {fileID: 1850827887}
   - component: {fileID: 1850827886}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2795,16 +2825,16 @@ RectTransform:
   m_GameObject: {fileID: 1850827884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.242913, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1045788081}
   m_Father: {fileID: 72340351}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.4, y: 54.9}
-  m_SizeDelta: {x: -354.71, y: -95.14}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1.4000015, y: 113.9}
+  m_SizeDelta: {x: 90, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850827886
 MonoBehaviour:
@@ -2914,7 +2944,13 @@ Prefab:
       propertyPath: m_TagString
       value: Interactable Object
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6400006, guid: 28a326458c3d25c4b9d5b2f014788401, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6400006, guid: 28a326458c3d25c4b9d5b2f014788401, type: 3}
+    - {fileID: 6400004, guid: 28a326458c3d25c4b9d5b2f014788401, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 28a326458c3d25c4b9d5b2f014788401, type: 3}
   m_IsPrefabParent: 0
 --- !u!1001 &1931203395
@@ -2971,6 +3007,35 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a6456b9419960c543890384b83ae02ef, type: 3}
   m_PrefabInternal: {fileID: 967063968}
+--- !u!1 &1959327741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1959327742}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1959327742
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959327741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.919624, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1598778056}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2057032551
 Prefab:
   m_ObjectHideFlags: 0
