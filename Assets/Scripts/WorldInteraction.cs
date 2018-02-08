@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 
-public class WorldInteraction : MonoBehaviour {
+public class WorldInteraction : NetworkBehaviour {
     NavMeshAgent playerAgent;
 
     private void Start()
@@ -13,8 +14,11 @@ public class WorldInteraction : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-            GetInteraction();
+        if (isLocalPlayer)
+        {
+            if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+                GetInteraction();
+        }
     }
     void GetInteraction()
     {
@@ -33,6 +37,11 @@ public class WorldInteraction : MonoBehaviour {
                 playerAgent.destination = interactionInfo.point;
             }
         }
+    }
+
+    public override void OnStartLocalPlayer()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.green;
     }
 
 }
