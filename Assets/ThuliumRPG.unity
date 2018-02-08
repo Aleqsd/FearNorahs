@@ -482,6 +482,11 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &229100090 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8,
+    type: 2}
+  m_PrefabInternal: {fileID: 659775735}
 --- !u!4 &231902805 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 6f5ac22b894785345bc0de34be8399eb, type: 3}
@@ -1001,6 +1006,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 610558ef87ba5b341bf091ea9ef8af0d, type: 3}
   m_PrefabInternal: {fileID: 796302825}
+--- !u!1001 &659775735
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557211699707566, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 76e27a2ce79aa274b8b2f91f29f098c8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &671046093
 Prefab:
   m_ObjectHideFlags: 0
@@ -1071,6 +1118,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dc0aab3aa1f6574fa89d0a18579f53a, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &688609260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 688609261}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &688609261
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688609260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.644, y: 0.533, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 229100090}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714463323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1435,6 @@ MonoBehaviour:
   - ' wherein, carved in mystic runes upon the very living rock, the last words of
     Olfin Bedwere of Rheged...'
   - '...make plain the last resting place of the most Holy Grail.'
-  name: Tim the Wizard
 --- !u!1001 &850041105
 Prefab:
   m_ObjectHideFlags: 0
