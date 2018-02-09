@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23361693625041506}
   - component: {fileID: 54273981155925738}
   - component: {fileID: 114456138711663310}
+  - component: {fileID: 114313152431373346}
+  - component: {fileID: 114326140005196040}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -100,6 +102,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114313152431373346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930522176796728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 7
+    i1: 120
+    i2: 141
+    i3: 171
+    i4: 86
+    i5: 13
+    i6: 18
+    i7: 132
+    i8: 232
+    i9: 105
+    i10: 18
+    i11: 210
+    i12: 169
+    i13: 192
+    i14: 159
+    i15: 25
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114326140005196040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930522176796728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114456138711663310
 MonoBehaviour:
   m_ObjectHideFlags: 1

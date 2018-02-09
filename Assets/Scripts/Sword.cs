@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Sword : MonoBehaviour, IWeapon
+public class Sword : NetworkBehaviour, IWeapon
 {
     private Animator animator;
     public List<BaseStat> Stats { get; set; }
@@ -27,6 +28,7 @@ public class Sword : MonoBehaviour, IWeapon
         if (other.tag == "Enemy")
         {
             other.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
+            Debug.Log("Sword hit on " + other.name);
         }
     }
 }

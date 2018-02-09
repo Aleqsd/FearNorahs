@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class InventoryController : MonoBehaviour {
+public class InventoryController : NetworkBehaviour {
     public PlayerWeaponController playerWeaponController;
     public Item sword, staff;
 
@@ -19,14 +20,13 @@ public class InventoryController : MonoBehaviour {
 
     private void Update()
     {
+        if (!isLocalPlayer)
+            return;
+
         if (Input.GetKeyDown(KeyCode.V))
-        {
             playerWeaponController.EquipWeapon(sword);
-        }
 
         if (Input.GetKeyDown(KeyCode.B))
-        {
             playerWeaponController.EquipWeapon(staff);
-        }
     }
 }

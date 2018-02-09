@@ -28,6 +28,7 @@ public class Fireball : MonoBehaviour {
         if (collision.transform.tag == "Enemy")
         {
             collision.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+            Debug.Log("Fireball hit on " + collision.collider.name);
         }
         Extinguish();
     }

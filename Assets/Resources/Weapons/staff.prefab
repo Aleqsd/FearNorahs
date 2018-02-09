@@ -20,11 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4265228592711222}
   - component: {fileID: 33043768091578596}
-  - component: {fileID: 65295508413002290}
   - component: {fileID: 23742142603487206}
   - component: {fileID: 95915586299541542}
   - component: {fileID: 54423056305713880}
   - component: {fileID: 114579436494279488}
+  - component: {fileID: 114696526924156488}
+  - component: {fileID: 114901011012961598}
   m_Layer: 0
   m_Name: staff
   m_TagString: Interactable Object
@@ -101,18 +102,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65295508413002290
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1715957332323830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95915586299541542
 Animator:
   serializedVersion: 3
@@ -141,3 +130,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32385f7ec0d01af4da5de3bd9558e805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireball: {fileID: 1930522176796728, guid: 07788dab560d1284e86912d2a9c09f19, type: 2}
+--- !u!114 &114696526924156488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715957332323830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 117
+    i1: 129
+    i2: 3
+    i3: 176
+    i4: 178
+    i5: 219
+    i6: 180
+    i7: 100
+    i8: 43
+    i9: 81
+    i10: 70
+    i11: 240
+    i12: 178
+    i13: 36
+    i14: 111
+    i15: 193
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114901011012961598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715957332323830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1

@@ -14,11 +14,11 @@ public class WorldInteraction : NetworkBehaviour {
 
     private void Update()
     {
-        if (isLocalPlayer)
-        {
-            if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-                GetInteraction();
-        }
+        if (!isLocalPlayer)
+            return;
+
+        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+           GetInteraction();
     }
     void GetInteraction()
     {
@@ -42,6 +42,7 @@ public class WorldInteraction : NetworkBehaviour {
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.green;
+        transform.tag = "Player";
     }
 
 }
