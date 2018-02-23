@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Sword : MonoBehaviour, IWeapon
+public class Sword : MonoBehaviour, Weapon
 {
+    public Warrior character;
     private Animator animator;
-    public List<BaseStat> Stats { get; set; }
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        gameObject.GetComponent<NetworkAnimator>().SetParameterAutoSend(0, true);
     }
 
     public void PerformAttack()
@@ -25,8 +27,6 @@ public class Sword : MonoBehaviour, IWeapon
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
-        {
-            other.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
-        }
+            other.GetComponent<Character>().TakeDamage(character.AttackPower);
     }
 }

@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
+public class Staff : NetworkBehaviour, Weapon
 {
     private Animator animator;
-    public List<BaseStat> Stats { get; set; }
-    Fireball fireball;
+    public GameObject fireball;
 
     public Transform ProjectileSpawn { get; set; }
 
     void Start()
     {
-        fireball = Resources.Load<Fireball>("Weapons/Projectiles/Fireball");
         animator = GetComponent<Animator>();
     }
 
@@ -26,9 +25,11 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
         animator.SetTrigger("Special_Attack");
     }
 
-    public void CastProjectile()
+    [Command]
+    public void CmdCastProjectile()
     {
-        Fireball fireballInstance = (Fireball)Instantiate(fireball, ProjectileSpawn.position, transform.rotation);
-        fireballInstance.Direction = ProjectileSpawn.forward;
+        var fireballInstance = (GameObject)Instantiate(fireball, transform.position, transform.rotation);
+        fireballInstance.GetComponent<Rigidbody>().velocity = transform.forward * 10f;
+        NetworkServer.Spawn(fireballInstance);
     }
 }

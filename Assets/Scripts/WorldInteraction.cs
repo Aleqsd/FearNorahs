@@ -42,6 +42,7 @@ public class WorldInteraction : NetworkBehaviour {
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.green;
+        transform.tag = "Player";
     }
 
 }

@@ -27,7 +27,7 @@ public class Fireball : MonoBehaviour {
     {
         if (collision.transform.tag == "Enemy")
         {
-            collision.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+            collision.transform.GetComponent<Character>().TakeDamage(Damage);
         }
         Extinguish();
     }
