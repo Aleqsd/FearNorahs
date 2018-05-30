@@ -38,8 +38,6 @@ GameObject:
   - component: {fileID: 23339595392534742}
   - component: {fileID: 195244692436254086}
   - component: {fileID: 114826786820651688}
-  - component: {fileID: 114815239221709080}
-  - component: {fileID: 114774698024839258}
   - component: {fileID: 54779606260454920}
   - component: {fileID: 114339166094841282}
   - component: {fileID: 114541761767098774}
@@ -121,6 +119,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9928a560f27e6384995617fd6d05c780, type: 2}
   m_StaticBatchInfo:
@@ -210,59 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHand: {fileID: 1959756103620532}
---- !u!114 &114774698024839258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1700948789941174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
-  m_SendInterval: 0.06666667
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114815239221709080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1700948789941174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 118
-    i1: 226
-    i2: 122
-    i3: 44
-    i4: 231
-    i5: 154
-    i6: 162
-    i7: 116
-    i8: 184
-    i9: 178
-    i10: 249
-    i11: 31
-    i12: 41
-    i13: 240
-    i14: 152
-    i15: 200
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114826786820651688
 MonoBehaviour:
   m_ObjectHideFlags: 1
