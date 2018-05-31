@@ -1,3 +1,3 @@
-# Thulium-RPG
+# FearNorash
 
-## https://www.youtube.com/playlist?list=PLivfKP2ufIK6ToVMtpc_KTHlJRZjuE1z0
+Survive Norahs !!!
