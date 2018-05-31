@@ -81,10 +81,8 @@ GameObject:
   - component: {fileID: 4465221320943634}
   - component: {fileID: 95903056775457744}
   - component: {fileID: 114422154231344830}
-  - component: {fileID: 114651378915908718}
-  - component: {fileID: 195164520349236014}
   - component: {fileID: 54598566778182268}
-  - component: {fileID: 114844062637970218}
+  - component: {fileID: 65540425709720384}
   m_Layer: 0
   m_Name: man
   m_TagString: Untagged
@@ -757,6 +755,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &65540425709720384
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231111976286170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &95903056775457744
 Animator:
   serializedVersion: 3
@@ -786,47 +796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ca642625b449a4ca8b7963b51f6aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114651378915908718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231111976286170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7811745cb00bb5140a1769d7c0f02bc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114844062637970218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231111976286170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: SelectCharacter
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!137 &137676030054709612
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -896,24 +865,3 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.024514765, y: -0.032360345, z: -0.00068867207}
     m_Extent: {x: 0.93754303, y: 0.31428453, z: 0.8477688}
   m_DirtyAABB: 0
---- !u!195 &195164520349236014
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231111976286170}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
