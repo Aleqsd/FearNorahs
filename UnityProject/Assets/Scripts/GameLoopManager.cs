@@ -88,7 +88,7 @@ public class GameLoopManager : MonoBehaviour {
     private IEnumerator GameStarting()
     {
         Debug.Log("char : " + playerPrefabs[PlayerPrefs.GetInt("charSelected")]);
-        Instantiate(playerPrefabs[PlayerPrefs.GetInt("charSelected")], new Vector3(0, 1, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(playerPrefabs[PlayerPrefs.GetInt("charSelected")], new Vector3(36, 1, -12), new Quaternion(0, 0, 0, 0));
 
         gameState = GameState.Playing;
 

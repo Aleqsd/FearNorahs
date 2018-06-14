@@ -10,6 +10,16 @@ public class DialogueSystem : MonoBehaviour {
     public BinaryTree<Dialogue.Dialogue> dialogueStory;
     public GameObject dialoguePanel;
     public GameObject scorePanel;
+	public GameObject brimstone;
+	public GameObject smog;
+	public GameObject lavaField;
+	public GameObject plasma;
+	public GameObject vulcore;
+	public GameObject darkness;
+	public GameObject firestorm;
+	public GameObject dirtyFirestorm;
+	public GameObject summon;
+
     public string npcName;
 
 	Button answer1Button;
@@ -227,6 +237,63 @@ public class DialogueSystem : MonoBehaviour {
 
             scoreText.text = "Score : " + score;
 
+			if (score == 1)
+			{
+				Instantiate(smog, new Vector3(41.668f, 2.375f, -11.598f), new Quaternion(0, 0, 0, 0));
+			}
+
+			if (score == 2)
+			{
+				Instantiate(smog, new Vector3(41.668f, 2.375f, -12.73f), new Quaternion(0, 0, 0, 0));
+			}
+
+			if (score == 3)
+			{
+				Instantiate(lavaField, new Vector3(48.7796f, 1.04f, -8.39f), new Quaternion(0, 0, 0, 0));
+				Instantiate(lavaField, new Vector3(48.7796f, 1.04f, -12.78f), new Quaternion(0, 0, 0, 0));
+				Instantiate(lavaField, new Vector3(48.7796f, 1.04f, -16.84f), new Quaternion(0, 0, 0, 0));
+				Instantiate(lavaField, new Vector3(48.7796f, 1.04f, -20.61f), new Quaternion(0, 0, 0, 0));				
+			}
+
+			if (score == 4)
+			{
+				Instantiate(plasma, new Vector3(39.37f, 0.21f, -15.72783f), new Quaternion(0, 0, 0, 0));
+			}
+
+			if (score == 5)
+			{
+				Instantiate(vulcore, new Vector3(54.18f, 3f, -6.79f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(54.18f, 3f, -10.38f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(54.18f, 3f, -14.43f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(54.18f, 3f, -18.01f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(54.18f, 3f, -21.86f), new Quaternion(0, 0, 0, 0));
+			}
+			if (score == 6)
+			{
+				Instantiate(darkness, new Vector3(40.42f, -2.109f, -13.24f), new Quaternion(0, 0, 0, 0));
+			}
+
+			if (score == 7)
+			{
+				Instantiate(vulcore, new Vector3(51.1f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(47.18f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(43.55f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(40.25f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(36.65f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(33f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+				Instantiate(vulcore, new Vector3(29.11f, 3f, -24.15f), new Quaternion(0, 0, 0, 0));
+			}
+
+			if (score == 8)
+			{
+				Instantiate(firestorm, new Vector3(48.97f, 2f, -7.73f), new Quaternion(0, 0, 0, 0));
+				Instantiate(firestorm, new Vector3(48.97f, 2f, -18.97f), new Quaternion(0, 0, 0, 0));
+			}
+
+			if (score == 9)
+			{
+				Instantiate(dirtyFirestorm, new Vector3(47.86f, 0.88f, -13.47f), new Quaternion(0, 0, 0, 0));
+			}
         }
         else
         {
@@ -242,14 +309,20 @@ public class DialogueSystem : MonoBehaviour {
 		if (win) {
 			scoreText.text = "Vous avez réussi !";
 			answer3Text.text = "Recommencer";
-			answer3Button.gameObject.SetActive (true);			
+			answer3Button.gameObject.SetActive (true);	
+			Instantiate(summon, new Vector3(38.82f, 3.97f, -8.3f), new Quaternion(0, 0, 0, 0));		
 		}
 		else {
 			scoreText.text = "Vous avez échoué avec " + score + " points !";
 			dialogueText.text = loseText;
 			answer3Text.text = "Recommencer";
 			answer3Button.gameObject.SetActive (true);
-			//Perso brûle
+			Instantiate(brimstone, new Vector3(36, 1, -12), new Quaternion(0, 0, 0, 0));
+			Instantiate(brimstone, new Vector3(34, 1, -12), new Quaternion(0, 0, 0, 0));
+			Instantiate(brimstone, new Vector3(38, 1, -12), new Quaternion(0, 0, 0, 0));
+			Instantiate(brimstone, new Vector3(36, 1, -10), new Quaternion(0, 0, 0, 0));
+			Instantiate(brimstone, new Vector3(34, 1, -10), new Quaternion(0, 0, 0, 0));
+			Instantiate(brimstone, new Vector3(38, 1, -10), new Quaternion(0, 0, 0, 0));
 		}
 	}
 }
