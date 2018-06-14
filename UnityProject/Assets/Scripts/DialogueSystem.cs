@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using BinaryTree;
 
 public class DialogueSystem : MonoBehaviour {
@@ -55,7 +56,7 @@ public class DialogueSystem : MonoBehaviour {
 
         answer1Button.onClick.AddListener(delegate { ContinueDialogue(true); });
 		answer2Button.onClick.AddListener(delegate { ContinueDialogue(false); });
-		answer3Button.onClick.AddListener(delegate { Application.LoadLevel(Application.loadedLevel); });
+		answer3Button.onClick.AddListener(delegate { SceneManager.LoadScene("GUI"); });
 
         dialoguePanel.SetActive(false);
 
@@ -324,5 +325,6 @@ public class DialogueSystem : MonoBehaviour {
 			Instantiate(brimstone, new Vector3(34, 1, -10), new Quaternion(0, 0, 0, 0));
 			Instantiate(brimstone, new Vector3(38, 1, -10), new Quaternion(0, 0, 0, 0));
 		}
+		Player.instance = false;
 	}
 }
