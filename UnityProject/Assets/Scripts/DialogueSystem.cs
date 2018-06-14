@@ -7,29 +7,33 @@ using BinaryTree;
 public class DialogueSystem : MonoBehaviour {
 
     public static DialogueSystem Instance { get; set; }
-    //public List<string> dialogueLines = new List<string>();
     public BinaryTree<Dialogue.Dialogue> dialogueStory;
     public GameObject dialoguePanel;
     public GameObject scorePanel;
     public string npcName;
 
-    Button answer1Button;
-    Button answer2Button;
-    Text dialogueText, nameText, answer1Text, answer2Text, scoreText;
-    //int dialogueIndex;
+	Button answer1Button;
+	Button answer2Button;
+	Button answer3Button;
+    Text dialogueText, nameText, answer1Text, answer2Text, answer3Text, scoreText;
     BinaryTreeNode<Dialogue.Dialogue> dialogueNode;
     int score = 0;
+	string winText = "Bravo, vous avez répondu à toutes les questions !";
+	string loseText = "Adieu ! Mouahahah !";
 
     // Use this for initialization
     void Awake () {
         StoryInitialisation();
 
-        answer1Button = dialoguePanel.transform.Find("Answer1").GetComponent<Button>();
-        answer2Button = dialoguePanel.transform.Find("Answer2").GetComponent<Button>();
+		answer1Button = dialoguePanel.transform.Find("Answer1").GetComponent<Button>();
+		answer2Button = dialoguePanel.transform.Find("Answer2").GetComponent<Button>();
+		answer3Button = dialoguePanel.transform.Find("Answer3").GetComponent<Button>();
+		answer3Button.gameObject.SetActive (false);
         dialogueText = dialoguePanel.transform.Find("Text").GetComponent<Text>();
         scoreText = scorePanel.GetComponent<Text>();
         answer1Text = answer1Button.GetComponentInChildren<Text>();
-        answer2Text = answer2Button.GetComponentInChildren<Text>();
+		answer2Text = answer2Button.GetComponentInChildren<Text>();
+		answer3Text = answer3Button.GetComponentInChildren<Text>();
         nameText = dialoguePanel.transform.Find("Name").GetChild(0).GetComponent<Text>();
         dialogueNode = new BinaryTreeNode<Dialogue.Dialogue>();
         dialogueNode = dialogueStory.Root;
@@ -40,7 +44,8 @@ public class DialogueSystem : MonoBehaviour {
 
 
         answer1Button.onClick.AddListener(delegate { ContinueDialogue(true); });
-        answer2Button.onClick.AddListener(delegate { ContinueDialogue(false); });
+		answer2Button.onClick.AddListener(delegate { ContinueDialogue(false); });
+		answer3Button.onClick.AddListener(delegate { Application.LoadLevel(Application.loadedLevel); });
 
         dialoguePanel.SetActive(false);
 
@@ -84,9 +89,9 @@ public class DialogueSystem : MonoBehaviour {
 
         ////////////////////////////////
 		//Answer 1 = lead to the question 4
-		dialogueStory.Root.Left.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Si vous êtes en mobilité réduite, quel est le protocole lors d’une évacuation pendant un incendie.",
-			"L’intervenant vous accompagne dans une salle sécurisée et va chercher de l’aide",
-			"L’intervenant attend avec vous les secours, sans bouger"));
+		dialogueStory.Root.Left.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Quel est le protocole à suivre lors d’un incendie pour un étudiant en mobilité réduite ?",
+			"L'intervenant va chercher les secours pendant qu'il attend",
+			"L’intervenant attend avec lui les secours, sans bouger"));
 
 		//Answer 2 = wrong answer
 		dialogueStory.Root.Left.Right.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("C’était l’obligation entreprise !",
@@ -166,43 +171,26 @@ public class DialogueSystem : MonoBehaviour {
 			""));
 
 		//Answer 2 = victoire
-		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Bravo, vous avez répondu à toutes les questions !",
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue(winText,
 			"",
 			""));
     }
 
     public void AddNewDialogue(/*string[] dLines,*/ string npcName)
     {
-        /*dialogueIndex = 0;
-        dialogueLines = new List<string>(dLines.Length);
-        dialogueLines.AddRange(dLines);*/
-        
-        this.npcName = npcName;
+		this.npcName = npcName;
 
         CreateDialogue();
     }
 
     public void CreateDialogue()
     {
-        //dialogueText.text = dialogueLines[dialogueIndex];
         nameText.text = npcName;
         dialoguePanel.SetActive(true);
     }
 
-    public void ContinueDialogue(bool choice) // Answer one : false, answer two : true
-    {
-        /*
-        if (dialogueIndex < dialogueLines.Count-1)
-        {
-            dialogueIndex++;
-            dialogueText.text = dialogueLines[dialogueIndex];
-            if (choice) answer1Button.GetComponentInChildren<Text>().text = "yeaa"; else answer2Button.GetComponentInChildren<Text>().text = "yeaa";
-        }
-        else
-        {
-            dialoguePanel.SetActive(false);
-        }*/
-        
+	public void ContinueDialogue(bool choice) // Answer one : true (for left), answer two : false (for right)
+    {        
         if (dialogueNode.Left != null) // If left is null, means that right is null too : no more dialog
         {
             
@@ -212,8 +200,6 @@ public class DialogueSystem : MonoBehaviour {
                 answer2Text.text = dialogueNode.Right.Value.Answer2;
                 dialogueText.text = dialogueNode.Right.Value.DialogueText;
                 dialogueNode = dialogueNode.Right;
-
-				//lose
             }
             else
             {
@@ -221,10 +207,26 @@ public class DialogueSystem : MonoBehaviour {
                 answer2Text.text = dialogueNode.Left.Value.Answer2;
                 dialogueText.text = dialogueNode.Left.Value.DialogueText;
                 dialogueNode = dialogueNode.Left;
-
-                score += 1;
             }
+
+			if (answer1Text.text == "" && answer2Text.text == "") {
+				answer1Button.gameObject.SetActive (false);
+				answer2Button.gameObject.SetActive (false);
+				if (dialogueText.text == winText) {
+					score++;
+					scoreText.text = "Score : " + score;
+					StartCoroutine (EndGame (true));
+				} else {					
+					StartCoroutine (EndGame (false));
+				}
+			}
+			else
+			{
+				score++;
+			}
+
             scoreText.text = "Score : " + score;
+
         }
         else
         {
@@ -232,4 +234,22 @@ public class DialogueSystem : MonoBehaviour {
         }
 
     }
+
+	IEnumerator EndGame(bool win)
+	{
+		Debug.Log("eng game");
+		yield return new WaitForSeconds(3);
+		if (win) {
+			scoreText.text = "Vous avez réussi !";
+			answer3Text.text = "Recommencer";
+			answer3Button.gameObject.SetActive (true);			
+		}
+		else {
+			scoreText.text = "Vous avez échoué avec " + score + " points !";
+			dialogueText.text = loseText;
+			answer3Text.text = "Recommencer";
+			answer3Button.gameObject.SetActive (true);
+			//Perso brûle
+		}
+	}
 }
