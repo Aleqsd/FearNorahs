@@ -57,34 +57,118 @@ public class DialogueSystem : MonoBehaviour {
 
     private void StoryInitialisation()
     {
+		//Start exam
+		//Question 1
         dialogueStory = new BinaryTree<Dialogue.Dialogue>
         {
-            Root = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Bonjour", "Bonjour", "Multiprise"))
+			Root = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Qui dois-je contacter pour avoir un RDV avec Yven Rigollet ?", "Sandrine Dailey", "Sharon Boudy"))
         };
-        dialogueStory.Root.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Que voulez-vous ?",
-            "Une multiprise s'il-vous-plait",
-            "Multiprise"));
-        dialogueStory.Root.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Et bonjour c'est pour les chiens ?", "Excusez-moi ...", "TG"));
+		//Answer 1 = mène à question 2
+		dialogueStory.Root.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Quel doit être le premier reflèxe avant d’envoyer une question par mail à l’administration ?",
+            "Passer par son délégué",
+            "Lire le memento"));
+		
+		//Answer 2 = wrong answer
+		dialogueStory.Root.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Non, je suis assez occupée comme ça ! Il faudra contacter Sandrine !", "", ""));
 
         ////////////////////////////////
+		//Answer 1 = wrong answer
+		dialogueStory.Root.Left.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("NON ! TOUJOURS lire le mémento !",
+            "",
+            ""));
 
-        dialogueStory.Root.Left.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Voila",
-            "Merci",
-            "..."));
-        dialogueStory.Root.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("S'il-vous-plait ?",
-            "Excusez-moi, S'il-vous-plait",
-            "Nop"));
-
-        ////////////////////////////////
-
-        dialogueStory.Root.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("C'est rien, voila",
-            "Merci",
-            "..."));
-        dialogueStory.Root.Right.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Avertissement !!",
-            "Excusez-moi",
-            "Allllllerr")); 
+		//Answer 2 = lead to the question 3
+		dialogueStory.Root.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Quel justificatif est recevable pour justifier une absence ?",
+			"Obligation d’entreprise",
+			"Certificat de mariage ou PACS"));
 
         ////////////////////////////////
+		//Answer 1 = lead to the question 4
+		dialogueStory.Root.Left.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Si vous êtes en mobilité réduite, quel est le protocole lors d’une évacuation pendant un incendie.",
+			"L’intervenant vous accompagne dans une salle sécurisée et va chercher de l’aide",
+			"L’intervenant attend avec vous les secours, sans bouger"));
+
+		//Answer 2 = wrong answer
+		dialogueStory.Root.Left.Right.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("C’était l’obligation entreprise !",
+            "",
+            "")); 
+
+		////////////////////////////////
+		//Answer 1 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Non ! L’intervenant patiente avec vous sans bouger, même dans le feu ! Mouahahaha !",
+			"",
+			""));
+
+		//Answer 2 = lead to the question 5
+		dialogueStory.Root.Left.Right.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("En cas d’incendie, le point de rendez-vous se situe devant l’entrée du Super U, sur le parvis, à :",
+			"7 mètres des façades",
+			"10 mètres des façades")); 
+
+		////////////////////////////////
+		//Answer 1 = lead to the question 6
+		dialogueStory.Root.Left.Right.Left.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Quelle interdiction figure sur le memento, partie hygiène ?",
+			"Interdiction de lécher une table",
+			"Interdiction de marcher sur les murs"));
+
+		//Answer 2 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Right.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("7 mètres ! Tout le monde sait ça !",
+			"",
+			""));
+		
+		////////////////////////////////
+		//Answer 1 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Right.Left.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("C’était marcher sur les murs ! Si si, cherchez, elle y est.",
+			"",
+			""));
+
+		//Answer 2 = lead to the question 7
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Dans quel cas doit-on faire un Duty Déjeuner ?",
+			"En cas de non respect des règles d’hygiène",
+			"En cas de non respect des horaires de déjeuner")); 
+
+		////////////////////////////////
+		//Answer 1 = lead to the question 8
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Quelle est l’adresse e-mail officielle du BSI ?",
+			"bsi@ynovaix.com",
+			"ynovaix.assistance@gmail.com"));
+
+		//Answer 2 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Non ! Lisez la dernière page du memento enfin ! Tout le monde sait ce qu’est un Duty Déjeuner !",
+			"",
+			"")); 
+
+		////////////////////////////////
+		//Answer 1 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Lol, et non !",
+			"",
+			""));
+
+		//Answer 2 = lead to the question 9
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Si je fais l’avance pour passer une certification diplômante, quelle démarche administrative dois-je faire pour être remboursé ?",
+			"Faire une note de frais",
+			"Fournir une attestation de réussite à Sandrine"));
+
+		////////////////////////////////
+		//Answer 1 = lead to the question 10
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("D’après le mémento, lequel de ces vilains méfaits est puni d’un avertissement ?",
+			"Porter des tongs",
+			"Avoir des résultats insuffisants"));
+
+		//Answer 2 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Eh non, c’était une note de frais, évidemment !",
+			"",
+			""));
+
+		////////////////////////////////
+		//Answer 1 = wrong answer
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right.Left.Left = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Et non, c’était avoir des résultats insuffisants, fallait pas être nul ! Mouahahaha ! ",
+			"",
+			""));
+
+		//Answer 2 = victoire
+		dialogueStory.Root.Left.Right.Left.Right.Left.Right.Left.Right.Left.Right = new BinaryTreeNode<Dialogue.Dialogue>(new Dialogue.Dialogue("Bravo, vous avez répondu à toutes les questions !",
+			"",
+			""));
     }
 
     public void AddNewDialogue(/*string[] dLines,*/ string npcName)
@@ -129,8 +213,7 @@ public class DialogueSystem : MonoBehaviour {
                 dialogueText.text = dialogueNode.Right.Value.DialogueText;
                 dialogueNode = dialogueNode.Right;
 
-                if(score > 9) // Avoid going under score 0
-                    score -= 10;
+				//lose
             }
             else
             {
@@ -139,7 +222,7 @@ public class DialogueSystem : MonoBehaviour {
                 dialogueText.text = dialogueNode.Left.Value.DialogueText;
                 dialogueNode = dialogueNode.Left;
 
-                score += 10;
+                score += 1;
             }
             scoreText.text = "Score : " + score;
         }
