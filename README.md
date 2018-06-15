@@ -12,6 +12,16 @@ FearNorahs est un Serious Game développé sur Unity dans le cadre d'un projet s
 > ou ayant existé est 
 > purement fortuite. 
 
+
+## Installation
+
+```sh
+$ git clone https://github.com/Aleqsd/FearNorahs.git
+```
+
+Compilez le projet sous Unity 2018, ou utilisez le Build.zip dans UnityProject/ pour récupérer directement l'executable.
+
+
 ## Fonctionnalités
 
 Voici les features du jeu :
@@ -28,11 +38,3 @@ Votre réponse va définir votre avenir...
 #### Environnement évolutif
 Vos actions auront des conséquences !
 
-
-## Installation
-
-```sh
-$ git clone https://github.com/Aleqsd/FearNorahs.git
-```
-
-Compilez le projet sous Unity 2018, ou utilisez le Build.zip pour récupérer directement l'executable.
