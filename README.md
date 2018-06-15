@@ -1,6 +1,6 @@
 # FearNorahs
 
-FearNorash est un Serious Game développé sur Unity dans le cadre d'un projet scolaire mené à Ynov Aix Campus
+FearNorahs est un Serious Game développé sur Unity dans le cadre d'un projet scolaire mené à Ynov Aix Campus
 
 # TL;DR
 
@@ -35,4 +35,4 @@ Vos actions auront des conséquences !
 $ git clone https://github.com/Aleqsd/FearNorahs.git
 ```
 
-Compilez le projet sous Unity 2018, ou utilisez le Build.zip pour récupérer direction l'executable.
+Compilez le projet sous Unity 2018, ou utilisez le Build.zip pour récupérer directement l'executable.
