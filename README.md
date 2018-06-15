@@ -2,6 +2,8 @@
 
 FearNorahs est un Serious Game développé sur Unity dans le cadre d'un projet scolaire mené à Ynov Aix Campus
 
+<img src="UnityProject/Assets/Resources/Title.png">
+
 # TL;DR
 
   - Norahs a des questions à vous poser, j'espère que vous êtes sans faille sur le règlement d'Ynov.
@@ -29,12 +31,19 @@ Voici les features du jeu :
 #### Character Picker
 Choisissez quel personnage vous allez incarner.
 
+<img src="UnityProject/Assets/Resources/CharacterPicker.png" width="400">
+
 #### Point-and-click
 Déplacez vous en point-and-click, ciblez votre destination.
+
+<img src="UnityProject/Assets/Resources/PointAndClick.png" width="400">
+
+#### Environnement évolutif
+Vos actions auront des conséquences !
+
+<img src="UnityProject/Assets/Resources/Environment.png" width="400">
 
 #### Système de dialogue
 Votre réponse va définir votre avenir...
 
-#### Environnement évolutif
-Vos actions auront des conséquences !
 
