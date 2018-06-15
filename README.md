@@ -4,8 +4,8 @@ FearNorahs est un Serious Game développé sur Unity dans le cadre d'un projet s
 
 # TL;DR
 
-  - Norahs a des questions à vous poser, j'espère que vous êtes sans faille sur le reglement d'Ynov.
-  - Une bonne réponse va l'énerver, mais vous ne serez pas brulé, par contre pour une mauvaise réponse...
+  - Norahs a des questions à vous poser, j'espère que vous êtes sans faille sur le règlement d'Ynov.
+  - Une bonne réponse va l'énerver, mais vous ne serez pas brûlé, par contre une mauvaise réponse...
 
 > Toute ressemblance avec 
 > des personnes existantes 
